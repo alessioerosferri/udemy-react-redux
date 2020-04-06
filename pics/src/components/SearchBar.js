@@ -5,13 +5,12 @@ class SearchBar extends React.Component{
 
   constructor(props) {
     super(props);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  onFormSubmit(event){
+  onFormSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state.term);
-  }
+  };
 
   render(){
     return (
