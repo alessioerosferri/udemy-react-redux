@@ -7,7 +7,12 @@ const KEY = "AIzaSyDwV5Sc4VhfXQa2qbN3tigj0KmLU-mVwPw";
 
 
 class App extends React.Component {
-  state = {videos: []};
+  state = {videos: [], currentVideo: null};
+
+  onVideoSelect = currentVideo => {
+    this.setState({currentVideo});
+  };
+
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
       params: {
@@ -25,7 +30,7 @@ class App extends React.Component {
     return (
       <div className="ui container">
         <SearchBar onSubmit={this.onTermSubmit}/>
-        <VideoList videos={this.state.videos}/>
+        <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect}/>
       </div>
     )
   }
