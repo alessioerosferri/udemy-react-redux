@@ -10,6 +10,10 @@ const KEY = "AIzaSyDwV5Sc4VhfXQa2qbN3tigj0KmLU-mVwPw";
 class App extends React.Component {
   state = {videos: [], currentVideo: null};
 
+  componentDidMount() {
+    this.onTermSubmit("children stories");
+  }
+
   onVideoSelect = currentVideo => {
     this.setState({currentVideo});
   };
