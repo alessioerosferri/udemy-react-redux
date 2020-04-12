@@ -34,5 +34,5 @@ const mapStateToProps = ({songs}) => {
 };
 
 export default connect(mapStateToProps, {
-  selectSong
+  selectSong //by passing action creator here, automatically redux wraps it in dispatch
 })(SongList);
