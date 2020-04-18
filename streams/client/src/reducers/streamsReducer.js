@@ -10,7 +10,7 @@ export default (state = {}, {type, payload}) => {
     case DELETE_STREAM:
       return _.omit(state, payload)
     case FETCH_STREAMS:
-      return {...state, ..._.mapKeyes(payload, "id")};
+      return {...state, ..._.mapKeys(payload, "id")};
     default:
       return state;
   }
