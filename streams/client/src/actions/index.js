@@ -54,5 +54,6 @@ export const updateStream = (id, stream) => async dispatch => {
   dispatch({
     type: EDIT_STREAM,
     payload: response.data
-  })
+  });
+  history.push("/")
 };
